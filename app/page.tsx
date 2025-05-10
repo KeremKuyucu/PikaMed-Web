@@ -2,8 +2,28 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, MessageCircle, Smartphone, Droplet, Activity, Users } from "lucide-react"
+import { useState } from "react"
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const handleDownload = () => {
+    // İndirme işlemi için gerekli kodlar buraya gelecek
+    window.open("https://play.google.com/store/apps/details?id=com.pikamed.app", "_blank")
+  }
+
+  const handleMoreInfo = () => {
+    // Daha fazla bilgi için gerekli kodlar buraya gelecek
+    window.scrollTo({
+      top: document.getElementById("features")?.offsetTop || 0,
+      behavior: "smooth"
+    })
+  }
+
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
@@ -19,25 +39,25 @@ export default function Home() {
             />
             <span className="text-xl font-bold text-primary">PikaMed</span>
           </div>
-          <nav className="hidden md:flex gap-6">
-            <Link href="#features" className="text-sm font-medium hover:text-primary">
+          <nav className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row absolute md:relative top-16 left-0 right-0 bg-background md:bg-transparent p-4 md:p-0 gap-6 border-b md:border-0`}>
+            <Link href="#features" className="text-sm font-medium hover:text-primary" onClick={() => setIsMenuOpen(false)}>
               Özellikler
             </Link>
-            <Link href="#how-it-works" className="text-sm font-medium hover:text-primary">
+            <Link href="#how-it-works" className="text-sm font-medium hover:text-primary" onClick={() => setIsMenuOpen(false)}>
               Nasıl Çalışır
             </Link>
-            <Link href="#benefits" className="text-sm font-medium hover:text-primary">
+            <Link href="#benefits" className="text-sm font-medium hover:text-primary" onClick={() => setIsMenuOpen(false)}>
               Faydalar
             </Link>
-            <Link href="#about" className="text-sm font-medium hover:text-primary">
+            <Link href="#about" className="text-sm font-medium hover:text-primary" onClick={() => setIsMenuOpen(false)}>
               Hakkımızda
             </Link>
           </nav>
-          <Button className="hidden md:flex">
+          <Button className="hidden md:flex" onClick={handleDownload}>
             İndir
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
-          <Button variant="ghost" size="icon" className="md:hidden">
+          <Button variant="ghost" size="icon" className="md:hidden" onClick={handleMenuClick}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -74,11 +94,11 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button size="lg" className="bg-primary text-white">
+                  <Button size="lg" className="bg-primary text-white" onClick={handleDownload}>
                     Hemen İndir
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                  <Button size="lg" variant="outline">
+                  <Button size="lg" variant="outline" onClick={handleMoreInfo}>
                     Daha Fazla Bilgi
                   </Button>
                 </div>
