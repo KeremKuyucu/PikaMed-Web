@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -9,7 +11,7 @@ export default function Home() {
 
   const handleDownload = () => {
     // İndirme işlemi için gerekli kodlar buraya gelecek
-    window.open("https://play.google.com/store/apps/details?id=com.pikamed.app", "_blank")
+    window.open("https://github.com/KeremKuyucu/pikamed/releases/latest", "_blank")
   }
 
   const handleMoreInfo = () => {
@@ -31,7 +33,7 @@ export default function Home() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Image
-              src="/placeholder.svg?height=40&width=40"
+              src="marultarlası.jpg"
               alt="PikaMed Logo"
               width={40}
               height={40}
@@ -111,7 +113,7 @@ export default function Home() {
                   </div>
                   <div className="h-full w-full rounded-3xl overflow-hidden bg-white">
                     <Image
-                      src="/placeholder.svg?height=650&width=320"
+                      src="/mobile.png"
                       alt="PikaMed App Screenshot"
                       width={320}
                       height={650}
@@ -290,7 +292,7 @@ export default function Home() {
               </div>
               <div className="flex items-center justify-center">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="marultarlası.jpg"
                   alt="PikaMed Benefits"
                   width={600}
                   height={400}
@@ -319,7 +321,7 @@ export default function Home() {
             <div className="mx-auto grid max-w-5xl grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5 mt-12">
               <div className="flex flex-col items-center space-y-2">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                  <Image src="/placeholder.svg?height=96&width=96" alt="Kerem Kuyucu" fill className="object-cover" />
+                  <Image src="kerem.jpg" alt="Kerem Kuyucu" fill className="object-cover" />
                 </div>
                 <h3 className="text-lg font-bold">Kerem Kuyucu</h3>
                 <p className="text-sm text-gray-500">Takım Kaptanı</p>
@@ -327,7 +329,7 @@ export default function Home() {
               <div className="flex flex-col items-center space-y-2">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full">
                   <Image
-                    src="/placeholder.svg?height=96&width=96"
+                    src="seyit.jpg"
                     alt="Seyit Ahmet Özçalık"
                     fill
                     className="object-cover"
@@ -338,21 +340,21 @@ export default function Home() {
               </div>
               <div className="flex flex-col items-center space-y-2">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                  <Image src="/placeholder.svg?height=96&width=96" alt="Defne Aydın" fill className="object-cover" />
+                  <Image src="defne.jpg" alt="Defne Aydın" fill className="object-cover" />
                 </div>
                 <h3 className="text-lg font-bold">Defne Aydın</h3>
                 <p className="text-sm text-gray-500">Takım Üyesi</p>
               </div>
               <div className="flex flex-col items-center space-y-2">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                  <Image src="/placeholder.svg?height=96&width=96" alt="Elif Er" fill className="object-cover" />
+                  <Image src="elif.jpg" alt="Elif Er" fill className="object-cover" />
                 </div>
                 <h3 className="text-lg font-bold">Elif Er</h3>
                 <p className="text-sm text-gray-500">Takım Üyesi</p>
               </div>
               <div className="flex flex-col items-center space-y-2">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                  <Image src="/placeholder.svg?height=96&width=96" alt="Aylin İşler" fill className="object-cover" />
+                  <Image src="aylin.jpg" alt="Aylin İşler" fill className="object-cover" />
                 </div>
                 <h3 className="text-lg font-bold">Aylin İşler</h3>
                 <p className="text-sm text-gray-500">Takım Üyesi</p>
@@ -361,30 +363,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-12 md:py-24 bg-primary text-primary-foreground">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Diyabet Yönetiminde Yeni Bir Dönem
-                </h2>
-                <p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  PikaMed ile diyabet yönetimini kolaylaştırın, sağlıklı bir yaşam için adım atın.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
-                  Hemen İndir
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-primary-foreground/10">
-                  Daha Fazla Bilgi
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+       
       </main>
 
       {/* Footer */}
@@ -393,7 +372,7 @@ export default function Home() {
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-2">
               <Image
-                src="/placeholder.svg?height=40&width=40"
+                src="/marultarlası.jpg"
                 alt="PikaMed Logo"
                 width={40}
                 height={40}
